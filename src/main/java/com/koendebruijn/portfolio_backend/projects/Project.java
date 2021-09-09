@@ -3,10 +3,17 @@ package com.koendebruijn.portfolio_backend.projects;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
+@Entity
+@Table
 public class Project {
 
     @JsonProperty("id")
+    @Id
     private long id;
 
     @JsonProperty("name")

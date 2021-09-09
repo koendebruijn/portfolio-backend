@@ -12,21 +12,15 @@ import java.util.List;
 @RestController
 @RequestMapping("api/v1/projects")
 public class ProjectController {
-    private final GithubService githubService;
+    private final ProjectService projectService;
 
     @Autowired
-    public ProjectController(GithubService githubService) {
-        this.githubService = githubService;
+    public ProjectController(ProjectService projectService) {
+        this.projectService = projectService;
     }
 
     @GetMapping
     public List<Project> getProjects() {
-        try {
-            return githubService.fetchRepositories();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return null;
+       return projectService.getProjects();
     }
 }
