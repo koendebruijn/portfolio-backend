@@ -48,7 +48,7 @@ public class GithubService {
             assert response.body() != null;
             String json = response.body().string();
 
-            List<Project> projects = objectMapper.readValue(json, new TypeReference<List<Project>>() {});
+            List<Project> projects = objectMapper.readValue(json, new TypeReference<>() {});
             logger.info("fetched github repos");
 
             projectService.addProjects(projects);

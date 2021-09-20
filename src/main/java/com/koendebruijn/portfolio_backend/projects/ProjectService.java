@@ -45,7 +45,7 @@ public class ProjectService {
 
         Optional<Project> optionalProject = projectRepository.findById(id);
 
-        if (!optionalProject.isPresent()) {
+        if (optionalProject.isEmpty()) {
             throw new ProjectNotFoundException(id);
         }
 
