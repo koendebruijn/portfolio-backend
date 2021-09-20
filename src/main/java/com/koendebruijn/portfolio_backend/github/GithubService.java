@@ -33,11 +33,8 @@ public class GithubService {
         ObjectMapper objectMapper = new ObjectMapper();
         OkHttpClient client = new OkHttpClient();
 
-        String token = System.getenv().get("token");
+        String token = System.getenv().get("TOKEN");
 
-        if (token == null) {
-            token = "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";
-        }
 
         Request request = new Request.Builder()
                 .url("https://api.github.com/user/repos?visibility=public&affiliation=owner")
@@ -50,7 +47,7 @@ public class GithubService {
             assert response.body() != null;
             String json = response.body().string();
 
-            List<Project> projects = objectMapper.readValue(json, new TypeReference<List<Project>>() {
+            List<Project> projects = objectMapper.readValue(json, new TypeReference<>() {
             });
             logger.info("fetched github repos");
 
