@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.util.List;
 
+
 @Service
 public class GithubService {
     private final ProjectService projectService;
@@ -47,8 +48,7 @@ public class GithubService {
             assert response.body() != null;
             String json = response.body().string();
 
-            List<Project> projects = objectMapper.readValue(json, new TypeReference<>() {
-            });
+            List<Project> projects = objectMapper.readValue(json, new TypeReference<List<Project>>() {});
             logger.info("fetched github repos");
 
             projectService.addProjects(projects);
