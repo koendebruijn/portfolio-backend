@@ -12,6 +12,10 @@ import javax.persistence.Table;
 @Table
 public class Project {
 
+    public long getId() {
+        return id;
+    }
+
     @JsonProperty("id")
     @Id
     private long id;
