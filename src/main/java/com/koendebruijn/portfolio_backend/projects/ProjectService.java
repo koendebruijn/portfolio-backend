@@ -1,6 +1,7 @@
 package com.koendebruijn.portfolio_backend.projects;
 
 import com.koendebruijn.portfolio_backend.projects.exception.ProjectNotFoundException;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -8,14 +9,10 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@AllArgsConstructor
 public class ProjectService {
 
     private final ProjectRepository projectRepository;
-
-    @Autowired
-    public ProjectService(ProjectRepository projectRepository) {
-        this.projectRepository = projectRepository;
-    }
 
     /**
      * Get a list of projects from the database

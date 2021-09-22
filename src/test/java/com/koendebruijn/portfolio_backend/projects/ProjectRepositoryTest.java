@@ -1,5 +1,8 @@
 package com.koendebruijn.portfolio_backend.projects;
 
+import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import org.checkerframework.checker.units.qual.A;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,12 +15,9 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 @DataJpaTest
 class ProjectRepositoryTest {
 
-    private final ProjectRepository underTest;
-
     @Autowired
-    ProjectRepositoryTest(ProjectRepository underTest) {
-        this.underTest = underTest;
-    }
+    private ProjectRepository underTest;
+
 
     @AfterEach
     void tearDown() {
