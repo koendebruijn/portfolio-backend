@@ -1,0 +1,20 @@
+name: Build & Test
+
+on:
+  push:
+    branches: [ main, dev ]
+
+jobs:
+  deploy:
+    env:
+      HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up JDK 1.11
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.11
+      - name: Build and test project with Maven
+        run: mvn -B package --file pom.xml
