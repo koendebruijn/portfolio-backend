@@ -15,5 +15,8 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.11
-      - name: Build and test project with Maven
-        run: mvn -B package --file pom.xml
+        - name: Build with Maven
+          run: mvn -B package --file pom.xml
+        - name: Test with Maven
+          run: mvn -B test --file pom.xml
+\]
