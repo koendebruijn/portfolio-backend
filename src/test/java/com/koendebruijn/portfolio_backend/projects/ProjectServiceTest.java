@@ -70,7 +70,7 @@ class ProjectServiceTest {
                 "",
                 ""
         );
-        given(projectRepository.findById(project.getId())).willReturn(Optional.empty());
+        given(projectRepository.findById(project.getId())).willReturn(Optional.of(project));
 
         // when
         underTest.getProjectById(project.getId());
