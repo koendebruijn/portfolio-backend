@@ -5,9 +5,8 @@ on:
     branches: [ main, dev ]
 
 jobs:
-  deploy:
-    env:
-      HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+  build_and_test:
+    name: Build & Test
     runs-on: ubuntu-latest
 
     steps:
