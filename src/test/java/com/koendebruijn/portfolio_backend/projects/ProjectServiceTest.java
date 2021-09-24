@@ -45,10 +45,12 @@ class ProjectServiceTest {
                         "koendebruijn/test-repo",
                         "",
                         "",
+                        "",
                         ""
                 ),
                 new Project(1,
                         "koendebruijn/test-repo",
+                        "",
                         "",
                         "",
                         ""
@@ -67,6 +69,7 @@ class ProjectServiceTest {
         // given
         Project project = new Project(1,
                 "koendebruijn/test-repo",
+                "",
                 "",
                 "",
                 ""

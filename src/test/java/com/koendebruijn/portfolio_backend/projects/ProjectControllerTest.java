@@ -37,9 +37,9 @@ class ProjectControllerTest {
     void shouldGetAllProjects() throws Exception {
         // given
         List<Project> projects = List.of(
-                new Project(faker.random().nextLong(), faker.name().name(), faker.lorem().characters(10), "", ""),
-                new Project(faker.random().nextLong(), faker.name().name(), faker.lorem().characters(10), "", ""),
-                new Project(faker.random().nextLong(), faker.name().name(), faker.lorem().characters(10), "", "")
+                new Project(faker.random().nextLong(), faker.name().name(), faker.lorem().characters(10), "", "", ""),
+                new Project(faker.random().nextLong(), faker.name().name(), faker.lorem().characters(10), "", "", ""),
+                new Project(faker.random().nextLong(), faker.name().name(), faker.lorem().characters(10), "", "", "")
         );
         // when
         when(projectRepository.findAllExceptProfileConfig()).thenReturn(projects);
@@ -58,7 +58,7 @@ class ProjectControllerTest {
     void shouldGetProjectById() throws Exception {
         // given
         long id = 1;
-        Project project = new Project(id, faker.name().name(), faker.lorem().characters(10), "", "");
+        Project project = new Project(id, faker.name().name(), faker.lorem().characters(10), "", "", "");
 
         // when
         when(projectRepository.findById(id)).thenReturn(Optional.of(project));
