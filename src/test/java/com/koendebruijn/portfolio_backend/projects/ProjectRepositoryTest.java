@@ -27,7 +27,7 @@ class ProjectRepositoryTest {
     @Test
     void shouldFindAllProjectsWithoutProfileRepo() {
         // given
-        Project project = new Project(347069020, "koendebruijn/koendebruijn", "", "", "");
+        Project project = new Project(347069020, "koendebruijn/koendebruijn", "", "", "", "");
         underTest.save(project);
         // when
         List<Project> projects = underTest.findAllExceptProfileConfig();

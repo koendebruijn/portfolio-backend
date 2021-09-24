@@ -2,11 +2,9 @@ package com.koendebruijn.portfolio_backend.projects;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -18,6 +16,7 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @Builder
 @Getter
+@Setter
 public class Project {
 
     @JsonProperty("id")
@@ -35,5 +34,8 @@ public class Project {
 
     @JsonProperty("homepage")
     private String homepage;
+
+    @Column(columnDefinition="TEXT")
+    private String readMe;
 
 }
