@@ -1,6 +1,8 @@
 package com.koendebruijn.portfolio_backend.projects;
 
 import com.github.javafaker.Faker;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -34,6 +36,7 @@ class ProjectControllerTest {
 
 
     @Test
+    @DisplayName(value = "Should get all projects")
     void shouldGetAllProjects() throws Exception {
         // given
         List<Project> projects = List.of(
@@ -51,10 +54,10 @@ class ProjectControllerTest {
         resultActions
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(3)));
-
     }
 
     @Test
+    @DisplayName(value = "Should get project by ID")
     void shouldGetProjectById() throws Exception {
         // given
         long id = 1;
@@ -72,7 +75,8 @@ class ProjectControllerTest {
     }
 
     @Test
-    void shouldThrowIfStudentDoesntExists() throws Exception {
+    @DisplayName(value = "Should throw NotFound exception if project does not exists")
+    void shouldThrowIfProjectDoesntExists() throws Exception {
         // when
         when(projectRepository.findById(anyLong())).thenReturn(Optional.empty());
 

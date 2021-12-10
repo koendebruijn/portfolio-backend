@@ -2,7 +2,6 @@ package com.koendebruijn.portfolio_backend.projects;
 
 import com.koendebruijn.portfolio_backend.projects.exception.ProjectNotFoundException;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
