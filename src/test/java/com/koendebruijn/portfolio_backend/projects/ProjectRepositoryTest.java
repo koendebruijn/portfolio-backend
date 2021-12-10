@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.checkerframework.checker.units.qual.A;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -25,6 +26,7 @@ class ProjectRepositoryTest {
     }
 
     @Test
+    @DisplayName(value = "Should find all projects except the GitHub profile repo")
     void shouldFindAllProjectsWithoutProfileRepo() {
         // given
         Project project = new Project(347069020, "koendebruijn/koendebruijn", "", "", "", "");

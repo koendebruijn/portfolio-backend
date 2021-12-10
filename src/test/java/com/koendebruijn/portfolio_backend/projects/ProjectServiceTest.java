@@ -29,6 +29,7 @@ class ProjectServiceTest {
     }
 
     @Test
+    @DisplayName(value = "Should get all the projects")
     void shouldGetAllProjects() {
         // when
         underTest.getProjects();
@@ -38,6 +39,7 @@ class ProjectServiceTest {
     }
 
     @Test
+    @DisplayName(value = "Should add project")
     void shouldAddProject() {
         // given
         List<Project> projects = List.of(
@@ -65,6 +67,7 @@ class ProjectServiceTest {
     }
 
     @Test
+    @DisplayName(value = "Should get project by ID")
     void shouldGetProjectById() {
         // given
         Project project = new Project(1,
@@ -84,7 +87,8 @@ class ProjectServiceTest {
     }
 
     @Test
-    void shouldThrowWhenStudentWithIdDoesNotExists() {
+    @DisplayName(value = "Should throw not found if project with ID does not exists")
+    void shouldThrowWhenProjectWithIdDoesNotExists() {
         // given
         long id = 1L;
         given(projectRepository.findById(anyLong())).willReturn(Optional.empty());
