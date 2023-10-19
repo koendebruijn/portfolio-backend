@@ -1,12 +1,12 @@
-name: Deploy
-run-name: ${{ github.actor }} is deploying to Render 🚀
+name: Build check
+run-name: Building Spring Boot Application 🏗️
 on:
-  push:
+  pull_request:
     branches:
       - main
 jobs:
   deploy:
-    name: Wait for Deploy
+    name: Wait for build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
