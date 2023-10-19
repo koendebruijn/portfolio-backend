@@ -9,4 +9,4 @@ spring:
     password: ${PGUSER}
     username: ${PGPASSWORD}
     driver-class-name: org.postgresql.Driver
-    url: jdbc:${PGHOST}:${PGPORT}/${PGDATABASE}
+    url: jdbc:postgresql:${PGHOST}:${PGPORT}/${PGDATABASE}
