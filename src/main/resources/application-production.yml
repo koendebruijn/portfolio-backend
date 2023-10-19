@@ -1,0 +1,12 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    password: ${PGUSER}
+    username: ${PGPASSWORD}
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:${PGHOST}:${PGPORT}/${PGDATABASE}
